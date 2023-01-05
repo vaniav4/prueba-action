@@ -6,11 +6,12 @@ on:
     types:
       - closed
 jobs:
-  - id: 'auth'
-  uses: 'google-github-actions/auth@v1'
-  with:
-    workload_identity_provider: ${{secret.WORKLOAD}}
-    service_account: ${{secret.service_account}}
+  -name: Auth
+    id: 'auth'
+    uses: 'google-github-actions/auth@v1'
+    with:
+      workload_identity_provider: ${{secret.WORKLOAD}}
+      service_account: ${{secret.service_account}}
 
 
   if_merged:
