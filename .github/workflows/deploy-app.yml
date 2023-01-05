@@ -5,8 +5,10 @@ on:
   pull_request:
     types:
       - closed
-jobs:
 
+permissions: write-all
+
+jobs:
   auth:
     runs-on: ubuntu-latest 
     steps: 
