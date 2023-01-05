@@ -12,8 +12,8 @@ jobs:
     steps: 
       - uses: 'google-github-actions/auth@v1'
         with:
-          workload_identity_provider: ${{secret.WORKLOAD}}
-          service_account: ${{secret.service_account}}
+          workload_identity_provider: ${{secrets.WORKLOAD}}
+          service_account: ${{secrets.service_account}}
 
   if_merged:
     runs-on: ubuntu-latest
