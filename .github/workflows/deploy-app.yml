@@ -1,4 +1,3 @@
-
 name: Deploy App Engine
 
 on:
@@ -17,7 +16,7 @@ jobs:
           workload_identity_provider: ${{secrets.WORKLOAD}}
           service_account: ${{secrets.service_account}}
 
-  if_merged:
+  deploy:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     steps:
