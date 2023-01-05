@@ -5,7 +5,6 @@ on:
   push
 
 jobs:
-  job_id:
     steps:
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v1'
