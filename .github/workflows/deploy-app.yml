@@ -2,15 +2,20 @@
 name: Deploy App Engine
 
 on:
-  push
-
+  pull_request:
+    types:
+      - closed
 jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
     steps:
-    - name: 'Set up Cloud SDK'
-      uses: 'google-github-actions/setup-gcloud@v1'
+    - name: Deploy to App Engine. 
+      id: deploy
+      uses: google-github-actions/deploy-appengine@v0.2.0
+      with:
+        project_id: ${{secrets.PROYECT_ID}}
 
-    - name: 'Use gcloud CLI'
-      run: 'gcloud info'
 
-
+        
         
