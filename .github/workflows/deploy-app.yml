@@ -7,7 +7,6 @@ on:
       - closed
 jobs:
   -name: Auth
-    id: 'auth'
     uses: 'google-github-actions/auth@v1'
     with:
       workload_identity_provider: ${{secret.WORKLOAD}}
