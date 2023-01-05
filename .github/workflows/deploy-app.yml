@@ -5,7 +5,6 @@ on:
   pull_request:
     types:
       - closed
-
 jobs:
   - uses: 'actions/checkout@v3'
   - name: Auth
