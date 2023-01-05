@@ -1,0 +1,21 @@
+
+name: Deploy App Engine
+
+on:
+  pull_request:
+    types:
+      - closed
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Deploy to App Engine
+      id: deploy
+      uses: google-github-actions/deploy-appengine@v0.2.0
+      with:
+        project_id: ${{secrets.PROYECT_ID}}
+
+
+        
