@@ -6,6 +6,13 @@ on:
     types:
       - closed
 jobs:
+  - id: 'auth'
+  uses: 'google-github-actions/auth@v1'
+  with:
+    workload_identity_provider: 'projects/830746747943/locations/global/workloadIdentityPools/github-wif-pool/*'
+    service_account: '  '
+
+
   if_merged:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
